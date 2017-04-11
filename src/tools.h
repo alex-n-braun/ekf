@@ -21,7 +21,12 @@ public:
   Eigen::VectorXd CalculateRMSE(const std::vector<Eigen::VectorXd> &estimations, const std::vector<Eigen::VectorXd> &ground_truth);
 
   /**
-  * A helper method to calculate Jacobians.
+   * A helper method to calculate the measurement function h.
+   */
+  Eigen::VectorXd h(const Eigen::VectorXd & x_state);
+
+  /**
+  * A helper method to calculate Jacobians of h.
   */
   Eigen::MatrixXd CalculateJacobian(const Eigen::VectorXd& x_state);
 
